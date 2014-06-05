@@ -1,4 +1,4 @@
-Bootstrap-3.1.1-OffCanvasMenu
+Bootstrap 3.1.1 - OffCanvasMenu
 =============================
 
 Off Canvas Bootstrap 3.1.1 Menu
