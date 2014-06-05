@@ -1,8 +1,5 @@
-Bootstrap 3.1.1 - OffCanvasMenu
+Bootstrap 3.1.1 - Responsive Off Canvas Menu
 =============================
-
-Off Canvas Bootstrap 3.1.1 Menu
-
 
 ## Documentation
 
