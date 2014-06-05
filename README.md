@@ -12,7 +12,6 @@ Check out the [documentation](http://webedge.github.io/Bootstrap-3.1.1-OffCanvas
 
 You can see the menu action in the [demo page](http://webedge.github.io/Bootstrap-3.1.1-OffCanvasMenu/demo).
 
-
 ## Usage
 
 This module is dependent on using Bootstrap 3.1.1. I have not tested on lower 3.0.0. 
