@@ -1,0 +1,4 @@
+﻿body { background:#333; padding-top:60px;}
+.container { background:#FFF; border-radius:10px; padding-bottom:20px; }
+.btn-group { margin-bottom:20px; }
+p:last-of-type { margin-bottom:0px; padding-bottom:0px; }

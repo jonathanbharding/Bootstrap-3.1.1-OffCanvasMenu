@@ -1,0 +1,25 @@
+﻿.boxshadow {
+    -webkit-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.5);
+}
+
+.borderradius(@radius: 0px) {    
+    -webkit-border-radius: @radius !important;
+    -moz-border-radius: @radius !important;
+    border-radius: @radius !important;
+}
+
+.callout(@color, @background: #f0f0f0) {
+    background: @background;
+    margin: 20px 0;
+    padding: 20px;
+    border-left: 3px solid @color;
+}
+
+.transition(@property: all, @time: 2s, @style: ease) {
+    -webkit-transition: @property @time @style;
+    -moz-transition: @property @time @style;
+    -o-transition: @property @time @style;
+    transition: @property @time @style;
+}
