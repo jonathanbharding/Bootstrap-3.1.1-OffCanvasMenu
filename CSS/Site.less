@@ -1,0 +1,283 @@
+﻿@import "../bootstrap/bootstrap.less";
+@import "Colors.less";
+@import "Styles.less";
+
+* {
+    .borderradius(0px);
+}
+
+/* Set Overflow-x so that there isn't a horizontal scroll on mobile */
+body {
+    background: @Background;
+    font-family: 'Open Sans', sans-serif;
+    overflow-x: hidden;
+    overflow-y:scroll;
+    height:100%;
+}
+
+header {
+    height: 90px;
+    border-top: 7px solid @Green;
+    background: url(../img/background.gif);
+    /*
+    position:fixed;
+    z-index:100;
+    width:100%;
+    */
+
+    &.login {
+        overflow:auto;
+
+        .logo {
+            width: 188px;
+            margin: 25px auto 40px;
+        }
+    }
+
+    .logo {
+        display: block;
+        background: url(../img/logo.png) no-repeat;
+        text-indent: -10000px;
+        height: 44px;
+        width: 188px;
+        margin: 10px 0 0px 0px;
+    }
+
+    .container {
+
+        > .navbar-header {
+            margin: 0px;
+
+            .navbar-toggle {
+                margin: 15px 0px 0px 0px;
+                background: rgba(0,0,0,0.4);
+
+                .icon-bar {
+                    background: White;
+                }
+            }
+        }
+
+        .navbar-collapse.collapse {
+            border: none;
+            display: block;
+            background: #151515;
+            position: absolute;
+            left: -100%;
+            top: 70px;
+            width: 80%;
+            max-height: none;
+            .transition(left 0.5s ease);
+
+            &.in {
+                left: 15px;
+
+                > li > a {
+                    padding: 8px 15px;
+                    border-bottom: 1px solid grey;
+                }
+            }
+
+            .nav {
+                margin: 0px -15px;
+
+                .dropdown-menu {
+                    padding: 0px;
+                    background: #FFF;
+                    top: 45px;
+                    left: 0px;
+
+                    > li > a:hover {
+                        background: @Background;
+                    }
+                }
+
+                > li {
+
+                    &.active > a, &.active > a:hover, &.open > a, &.open > a:focus, > a:focus {
+                        background: @Green;
+                        color: rgba(0,0,0,0.75);
+                    }
+
+                    &.secondary > a {
+                        color: rgba(255,255,255,0.4);
+                    }
+
+                    > a {
+                        color: #FFF;
+                        padding: 13px 15px;
+                        .transition(background, 0.5s, ease);
+                        font-size: 14px;
+
+                        &:hover {
+                            background: rgba(0,0,0,0.25);
+                            color: white;
+                        }
+                    }
+                }
+
+                &.profile {
+
+                    > li > a {
+                        color: @Blue;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#mainContainer {
+    left: 0;
+    position: absolute;
+    width: 100%;
+    .transition(left, 0.5s, ease);
+
+    &.in {
+        left: 80%;
+    }
+}
+
+.shadowBox {
+    margin-top: -15px;
+    .boxshadow;
+    background: white;
+    overflow: auto;
+    padding-bottom: 15px;
+
+    &.loginBox {
+        .make-sm-column(6);
+        .make-sm-column-offset(3);
+    }
+
+    &.secondaryBox {
+        .make-md-column(12);
+    }
+}
+
+.input-group input.form-control, .btn {
+    padding: 8px 12px;
+}
+
+.callout {
+    .callout(Blue);
+}
+
+.btn-primary {
+    background: @Blue;
+    border-bottom: 3px solid @DarkBlue;
+}
+
+.input-group {
+    width: 100%;
+
+    .input-group-addon {
+        width: 36px;
+        text-align: center;
+    }
+
+    .input-arrow {
+        position: absolute;
+        top: 13px;
+        left: 37px;
+        width: 0;
+        height: 0;
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        border-left: 5px solid #ccc;
+        margin: 0;
+        z-index: 5;
+    }
+}
+
+@media (min-width: @screen-sm) {
+    header {
+        
+        height:auto; 
+
+        .logo {
+            width: 40px;
+            margin:30px 0 0 0;
+        }
+
+        .container {
+
+            .navbar-collapse.collapse {
+                width: auto;
+                background: none;
+                position: relative;
+                left: auto;
+                top: auto;
+                padding: 0px;
+                margin: 25px 0 35px 50px;
+
+                .nav {
+                    margin: 0px;
+
+                    .dropdown-menu {
+                        padding: 10px 0px;
+                    }
+
+                    > li {
+                        > a {
+                            padding: 13px 8px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #mainContainer {
+        position: relative;
+        left: auto;
+        width: 750px;
+    }
+}
+
+@media (min-width: @screen-md) {
+    header {
+        .container {
+            > .navbar-header {
+                margin: 0px;
+            }
+
+            .navbar-collapse.collapse {
+                margin: 25px 0 40px 50px;
+
+                .nav {
+                    > li {
+                        > a {
+                            font-size: 16px;
+                            padding: 13px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #mainContainer {
+        width: @screen-md;
+    }
+}
+
+@media (min-width: @screen-lg) {
+    header {
+        .logo {
+            width: 188px;
+        }
+
+        .container {
+
+            .navbar-collapse.collapse {
+                padding: 0px;
+                margin: 30px 0 40px 195px;
+            }
+        }
+    }
+
+    #mainContainer {
+        width: @screen-lg;
+    }
+}
