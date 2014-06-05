@@ -29,12 +29,18 @@
                 <h1>Bootstrap 3.1.1: Offcanvas Menu</h1>
                 <p>Off Canvas Menu created with Bootstrap 3.1.1 with very minimal javascript utilizing CSS3 animations.</p>
                 <h3>First things first, <a href="https://github.com/webedge/Bootstrap-3.1.1-OffCanvasMenu/demo" target="_blank">lets see a demo</a></h3>
-                <p>The only jquery needed is check the window size. If it is at bootstrap's predefined xsmall size it add a CSS class to change the menu's positioning</p>
-                <pre><code>$(window).resize(function () {
+                <p>Bootstrap already takes care of showing the '.navbar-toggle' when it is on the x-small window size.</p>
+                <p>I have styled the .navbar-collapse.collapse to be positioned absolute by default. Only in the other media queries am I switching it to relative. Now when someone toggles the '.navbar-toggle' we are simply adding the 'in' class and the 'left' css property is being adjusted</p>
+                <p>The second section of javascript is there in case someone is on a desktop and happens to drag their window beyond the x-small bootstrap size. This will remove the class, and use the media queries to position the menu relative again.</p>
+                <pre><code>$('document').ready(function () {
+    $('.navbar-toggle').on('click', function () {
+        $('.collapse, #mainContainer').toggleClass('in');
+    });
+});
+
+$(window).resize(function () {
     if ($(window).width() > 768) {
         $('.collapse, #mainContainer').removeClass('in');
-    } else {
-        $('.collapse, #mainContainer').addClass('in');
     };
 });
 </code></pre>
@@ -48,7 +54,7 @@
                 <div class="clearfix"></div>
 
                 <h3>The Trick?</h3>
-                <p>When the screen is at Bootstrap's xsmall size or below by adding our additional selector the menu is positioned absolute. When the toggle menu is clicked the menu transitions to it's new left position of 15px.</p>
+                <p>This is the default styling I'm giving the menu. When the 'in' class is added it can leverage CSS3's transition property to animate the menu.</p>
                 
 <pre><code>.navbar-collapse.collapse {
     border: none;
@@ -68,7 +74,19 @@
 .navbar-collapse.collapse.in {
         left: 15px;
 }</code></pre>
-
+                <h3>Media Queries</h3>
+                <p>Along with the second block of javascript listed above, I leverage media queries to position the navigation back to relative beyond the bootstrap x-small size</p>
+                
+<pre><code>@media (min-width: 768px) { 
+.navbar-collapse.collapse {
+    width: auto;
+    background: none;
+    position: relative;
+    left: auto;
+    top: auto;
+    padding: 0px;
+    margin: 25px 0 35px 50px;
+}</code></pre>
 
                 <footer class="well well-sm">
                     <p>Having trouble? Hit me up at <a href="http://www.twitter.com/jonharding">@jonharding</a><br />
